@@ -9,15 +9,27 @@
 
 <section class="logo-container">
   <div class="finch-container">
-    <img src="{% static 'images/bird-logo.jpg' %}" 
-    alt="The Finch Collector Finch" 
-    height='100%'/>
+    <img src="{% static 'images/bird-peeking.svg' %}"
+    alt="The Cat Collector Cat"
+    width='100%' />
   </div>
   <img 
-    src="{% static 'images/bird-logo.jpg' %}" 
+    src="{% static 'images/finch-collector.svg' %}" 
     alt="Text reads: Finch Collector"
-    height='100%'
+    width='100%'
   />
 </section>
+
+{% if not user.is_authenticated %}
+  <section>
+    <form action="{% url 'home' %}" method="post" class="login">
+      <h1>Login</h1>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="hidden" name="next" value="{{ next }}">
+      <button type="submit" class="btn submit">Login</button>
+    </form>
+  </section>
+{% endif %}
 
 {% endblock %}
