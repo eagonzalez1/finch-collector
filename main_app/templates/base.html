@@ -21,7 +21,7 @@
     <div class="header-logo-container">
       <a href="/">
         <img 
-          src="{% static 'images/finch-3.png' %}"
+          src="{% static 'images/bird-2.webp' %}"
           alt="The Finch Collector Logo"
           width='50'
         >
@@ -30,7 +30,9 @@
     <nav>
       <ul>
         <li><a href="{% url 'finches_index' %}">All Finches</a></li>
+        <li><a href="{% url 'toys_index' %}">All Toys</a></li>
         <li><a href="{% url 'finches_create' %}">Add a Finch</a></li>
+        <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
       </ul>
     </nav>
